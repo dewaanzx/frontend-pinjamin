@@ -1,4 +1,4 @@
-# Vue 3 Setup
+# Frontend Pinjamin
 
 This template should help get you started developing with Vue 3 in Vite.
 
