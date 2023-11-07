@@ -11,7 +11,7 @@
     class="bg-blue-400 p-2 rounded-md text-white hover:bg-blue-500 ml-1"
     @click="counterStore.decrement()"
   >
-    kkkkk
+    kkkkkiyith
   </button>
 </template>
 
