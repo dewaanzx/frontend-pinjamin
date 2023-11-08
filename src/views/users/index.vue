@@ -1,45 +1,29 @@
-<!-- <template>
-  <div class="flex gap-20 p-5">
+<template>
+  <div class="flex flex-col gap-5 md:flex-row justify-between">
     <div
-      class="sm: h-[350px] w-[660px] bg-gradient-to-r from-[#0C6898] to-[#40BDFE] rounded-[32px] grid justify-center items-center"
+      class="bg-gradient-to-r from-[#0C6898] to-[#40BDFE] w-[100%] h-min px-5 py-5 rounded-[32px] md:rounded-[32px]"
     >
-      <p class="md: mb-[-50px] text-[27px] text-white">Pinjaman Mobil</p>
-      <div
-        class="bg-white w-[492px] h-[244px] rounded-[20px] grid justify-center"
-      >
-        <div class="flex gap-5 w-[452px] h-[106px] mt-5">
-          <div class="w-[122px] h-[106px]">
-            <img
-              src="../../assets/car.png"
-              class="w-[122px] h-[70px] rounded-[6px]"
-              alt=""
-            />
-            <p class="text-center pt-[10px]">Avanza 2023</p>
-          </div>
-          <div class="w-[171px] h-[66px]">
-            <p class="text-[20px]">PTUN Yogyakarta</p>
-            <p class="text-[16px]">30-10-2022</p>
-          </div>
-          <div
-            class="w-[87px] h-[106px] flex flex-1 items-center justify-center"
-          >
-            <p class="text-[20px] text-[#008000] font-medium">Diterima</p>
-          </div>
-        </div>
-        <div class="w-[452px] h-[2px] bg-[#D9D9D9]"></div>
-        <div class="w[452px] h-[40px] flex items-center">
-          <p class="text-[13px]">Pinjaman diterima, ayo ambil mobil</p>
-          <div class="flex flex-grow justify-end">
-            <button
-              class="w-[117px] h-[40px] bg-[#EF9D0F] rounded-[12px] text-white font-semibold hover:bg-yellow-600"
-            >
-              Ambil Mobil
-            </button>
-          </div>
-        </div>
+      <div class="w-[100%] h-min px-3 py-1 rounded-lg md:rounded-[32px]">
+        <span class="text-white text-[17px] md:text-[27px]"
+          >Pinjaman Mobil</span
+        >
+        <div
+          class="bg-white w-[100%] h-[200px] px-7 py-7 rounded-lg md:rounded-md"
+        ></div>
+      </div>
+    </div>
+    <div
+      class="bg-gradient-to-r from-[#0C6898] to-[#40BDFE] w-[100%] h-min px-5 py-5 rounded-[32px] md:rounded-[32px]"
+    >
+      <div class="w-[100%] h-min px-3 py-1 rounded-lg md:rounded-[32px]">
+        <span class="text-white text-[17px] md:text-[27px]"
+          >Pinjaman Ruangan</span
+        >
+        <div
+          class="bg-white w-[100%] h-[200px] px-7 py-7 rounded-lg md:rounded-md"
+        ></div>
       </div>
     </div>
   </div>
-</template> -->
-<template>Ini bakal halaman users</template>
+</template>
 <script></script>

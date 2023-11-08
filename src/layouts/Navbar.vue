@@ -1,17 +1,57 @@
 <template>
-  <nav class="container w-screen py-5 px-5 h-[80px] bg-[#2B9FDC]">
+  <nav class="py-5 px-5 h-[80px] bg-[#2B9FDC]">
     <div class="flex justify-between items-center">
       <img src="../assets/logo.svg " class="h-[50px]" alt="" />
+      <!-- toggle responsive -->
       <button
         @click="toggleOpen"
-        class="bg-[#2b9fdc] hover:bg-sky-400 w-9 h-9 rounded-md flex items-center justify-center animate-pulse animate-infinite"
+        class="w-9 h-9 rounded-md animate-bounce animate-infinite animate-alternate-reverse md:hidden block"
       >
         <img src="../assets/more.png" class="h-[30px] w-[30px]" alt="" />
       </button>
+      <!-- Bagian md: -->
+      <div class="hidden sm:block">
+        <ul class="flex flex-row gap-6">
+          <li class="flex justify-center items-center">
+            <button
+              href=""
+              class="flex justify-center flex-col items-center text-base gap-1 w-11 h-11 bg-sky-600 hover:bg-sky-700 rounded-full"
+            >
+              <img
+                src="../assets/bell.svg"
+                class="h-[25px] w-[25px] rounded-full text-2xl"
+                alt=""
+              />
+            </button>
+          </li>
+          <li class="flex justify-center items-center">
+            <div class="flex justify-center items-center gap-3">
+              <img
+                src="../assets/profile.png"
+                class="h-[45px] w-[45px] rounded-full"
+                alt=""
+              />
+            </div>
+          </li>
+          <li class="flex justify-center items-center">
+            <Button
+              @click="authStore.logout()"
+              class="flex justify-center items-center text-[12px] text-white font-semibold w-[80px] h-[25px] rounded-full bg-red-500 hover:bg-red-700"
+            >
+              <img
+                src="../assets/keluar.png"
+                class="w-[15px] h-[15px]"
+                alt=""
+              />
+              Keluar</Button
+            >
+          </li>
+        </ul>
+      </div>
     </div>
     <div
       v-show="open"
-      class="fixed bottom-0 right-0 left-0 p-6 rounded-t-full bg-[#2B9FDC] animate-fade-up"
+      class="fixed bottom-0 right-0 left-0 p-6 rounded-t-full bg-[#2B9FDC] animate-fade-up md:hidden block"
     >
       <ul class="grid gap-4">
         <li class="flex justify-center items-center">
@@ -45,7 +85,7 @@
           >
             <Button
               @click="authStore.logout()"
-              class="flex justify-center items-center text-base text-white font-semibold w-[130px] h-[40px] rounded-full bg-red-500 hover:bg-red-700"
+              class="flex justify-center items-center text-[15px] text-white font-semibold w-[120px] h-[30px] rounded-full bg-red-500 hover:bg-red-600"
             >
               <img
                 src="../assets/keluar.png"
