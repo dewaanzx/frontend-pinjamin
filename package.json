@@ -8,12 +8,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "alpinejs": "^3.13.2",
     "axios": "^1.5.0",
     "moment": "^2.29.4",
     "pinia": "^2.1.6",
     "remixicon": "^3.5.0",
     "sass": "^1.66.1",
     "sass-loader": "^13.3.2",
+    "tailwindcss-animated": "^1.0.1",
     "unplugin-vue-components": "^0.25.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
