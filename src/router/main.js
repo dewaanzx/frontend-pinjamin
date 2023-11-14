@@ -3,11 +3,9 @@ import UserView from "@/views/user/index.vue";
 import UserCreateView from "@/views/user/create.vue";
 import UserUpdateView from "@/views/user/update.vue";
 import UsersPinjamin from "../views/users/index.vue";
-import AdminPinjamin from "../views/admin/index.vue";
 
 import ExampleLayout from "@/layouts/ExampleLayout.vue";
 import NavbarPinjamin from "../layouts/Navbar.vue";
-import SidebarPinjamin from "../layouts/Sidebar.vue";
 
 // middleware
 import AuthMiddleware from "@/middleware/auth.middleware.js";
@@ -60,16 +58,6 @@ export default [
     meta: {
       title: "User Pinjamin",
       layout: NavbarPinjamin,
-      middleware: [AuthMiddleware],
-    },
-  },
-  {
-    path: "/admin",
-    name: "admin",
-    component: AdminPinjamin,
-    meta: {
-      title: "Admin Pinjamin",
-      layout: SidebarPinjamin,
       middleware: [AuthMiddleware],
     },
   },
