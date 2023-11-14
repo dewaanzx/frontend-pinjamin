@@ -1,5 +1,5 @@
 <template>
-  <nav class="py-5 px-5 h-[80px] bg-[#2B9FDC]">
+  <nav class="py-5 px-5 h-[80px] bg-[#2B9FDC] xl:w-[100%]">
     <div class="flex justify-between items-center">
       <img src="../assets/logo.svg " class="h-[50px]" alt="" />
       <!-- toggle responsive -->
@@ -24,27 +24,29 @@
               />
             </button>
           </li>
-          <li class="flex justify-center items-center">
+          <li
+            class="flex justify-center items-center lg:mr-[30px] xl:mr-[60px]"
+          >
             <div class="flex justify-center items-center gap-3">
               <img
                 src="../assets/profile.png"
-                class="h-[45px] w-[45px] rounded-full"
+                class="h-[32px] w-[32px] rounded-full"
                 alt=""
               />
+              <span class="text-white">Irfannudin</span>
             </div>
           </li>
           <li class="flex justify-center items-center">
             <Button
               @click="authStore.logout()"
-              class="flex justify-center items-center text-[12px] text-white font-semibold w-[80px] h-[25px] rounded-full bg-red-500 hover:bg-red-700"
+              class="flex justify-center items-center text-[12px] text-white font-semibold w-[40px] h-[28px] rounded-lg bg-red-500 hover:bg-red-700"
             >
               <img
                 src="../assets/keluar.png"
                 class="w-[15px] h-[15px]"
                 alt=""
               />
-              Keluar</Button
-            >
+            </Button>
           </li>
         </ul>
       </div>
@@ -58,10 +60,10 @@
           <div class="flex justify-center flex-col items-center gap-1">
             <img
               src="../assets/profile.png"
-              class="h-[60px] w-[60px] rounded-full"
+              class="h-[40px] w-[40px] rounded-full"
               alt=""
             />
-            <span class="text-base font-semibold text-white"
+            <span class="text-[12px] font-semibold text-white"
               >Irfannudin Hakim</span
             >
           </div>
@@ -110,7 +112,7 @@ import { useAuthStore } from "@/stores/auth.store.js";
 import { ref } from "vue";
 
 export default {
-  name: "ExampleLayout",
+  name: "Navbar",
   data() {
     const open = ref(false);
 
