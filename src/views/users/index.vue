@@ -1,171 +1,203 @@
 <template>
-  <!-- DIV Mobil & Ruangan -->
-  <div class="lg:w-[82%] xl:w-[1240px] mx-auto">
-    <div class="flex flex-col gap-5 lg:flex-row justify-around">
-      <div>
-        <span class="text-[17px] xl:text-[27px]">Ruangan</span>
-        <div
-          class="w-80% bg-white rounded-[22px] border border-black-200 lg:w-[390px] xl:w-[608px]"
-        >
-          <div
-            class="m-5 flex justify-between items-center pb-5 border-b-2 border-black-200"
+  <!-- ini pembungkus -->
+  <div class="w-[80vw] mx-auto text-pinjamin flex flex-col gap-12">
+    <!-- Card Informasi -->
+    <div class="flex flex-col gap-2 md:gap-0 md:flex-row md:justify-between">
+      <!-- bagian status pinjam mobil -->
+      <div class="md:w-[35vw]">
+        <div>
+          <span class="text-[18px] md:text-[24px]" style="line-height: 2em"
+            >Mobil</span
           >
-            <div class="flex flex-col gap-3">
-              <Span class="text-[16px] font-semibold xl:text-[24px]"
-                >PTUN Yogyakarta</Span
-              >
+          <!-- cardnya -->
+          <div
+            class="border border-[#666666] gap-4 flex flex-col rounded-[18px] p-3 md:p-6"
+          >
+            <div class="bg-orange-50 flex justify-between items-center">
+              <div class="flex flex-col bg-red-100">
+                <Span
+                  class="text-[18px] md:text-[27px] font-semibold pb-3"
+                  style="line-height: 1.2em"
+                  >Sekolah Vokasi UNS Surakarta
+                </Span>
+                <Span
+                  class="flex flex-row items-center text-[14px] md:text-[18px] gap-1"
+                >
+                  <img
+                    src="../../assets/calender.png "
+                    class="w-[2.3333vmax] h-[2.3333vmax] md:w-[28px] md:h-[28px]"
+                    alt=""
+                  />
+                  231313123</Span
+                >
+                <Span
+                  class="flex flex-row items-center text-[14px] md:text-[18px] gap-1"
+                >
+                  <img
+                    src="../../assets/time-line.png "
+                    class="w-[2.3333vmax] h-[2.3333vmax] md:w-[28px] md:h-[28px]"
+                    alt=""
+                  />
+                  231313123</Span
+                >
+              </div>
               <div>
-                <div class="flex flex-row gap-2 items-center">
-                  <img
-                    src="../../assets/calender.png"
-                    class="h-5 xl:h-7"
-                    alt=""
-                  />
-                  <span class="text-[13px] xl:text-[18px]">32-2-2003</span>
-                </div>
-                <div class="flex flex-row gap-2 items-center">
-                  <img
-                    src="../../assets/time-line.png"
-                    class="h-5 xl:h-7"
-                    alt=""
-                  />
-                  <span class="text-[13px] xl:text-[18px]">32-2-2003</span>
-                </div>
+                <button
+                  class="w-[15.5vmin] md:w-[15.5vmin] bg-[#EEFFEE] text-[11px] md:text-[14px] text-[#008000] rounded-lg"
+                >
+                  Diterima
+                </button>
               </div>
             </div>
-            <div
-              class="w-[76px] h-[20px] rounded-[12px] text-[13px] text-[#008000] bg-[#EEFFEE] flex items-center justify-center"
-            >
-              Diterima
+            <!-- rectangle -->
+            <div class="h-[2px] bg-[#D9D9D9]"></div>
+            <!-- tombol ambil -->
+            <div class="h-[5vmin] flex flex-row justify-between items-center">
+              <span
+                class="text-[11px] md:text-[12px]"
+                style="line-height: 1.2em"
+                >Pinjaman diterima, ayo ambil mobil</span
+              >
+              <button
+                class="w-[20vw] md:w-[10vw] md:h-[5vh] bg-orange-400 hover:bg-orange-500 text-[11px] md:text-[14px] text-white rounded-md"
+              >
+                Ambil Mobil
+              </button>
             </div>
           </div>
-          <div
-            class="m-5 text-[12px] flex flex-1 items-center justify-between lg:h-[40px]"
-          >
-            <span class="lg:text-[13px]"
-              >Pinjaman diterima, ayo ambil mobil</span
-            >
-            <button
-              class="bg-[#E26B00] text-white w-[90px] h-[20px] rounded-[12px] hover:bg-orange-700 xl:w-[117px] xl:h-[44px] text-[11px] xl:text-[12px]"
-            >
-              Ambil mobil
-            </button>
-          </div>
         </div>
+        <!-- akhir card mobil -->
       </div>
 
-      <!--  -->
-      <div>
-        <span class="text-[17px] xl:text-[27px]">Ruangan</span>
-        <div
-          class="w-80% bg-white rounded-[22px] border border-black-200 lg:w-[390px] xl:w-[608px]"
-        >
-          <div
-            class="m-5 flex justify-between items-center pb-5 border-b-2 border-black-200"
+      <!-- bagian status pinjam ruangan -->
+      <div class="md:w-[35vw]">
+        <div>
+          <span class="text-[18px] md:text-[24px]" style="line-height: 2em"
+            >Ruangan</span
           >
-            <div class="flex flex-col gap-3">
-              <Span class="text-[16px] font-semibold xl:text-[24px]"
-                >PTUN Yogyakarta</Span
-              >
+          <!-- cardnya -->
+          <div
+            class="border border-[#666666] gap-4 flex flex-col rounded-[18px] p-3 md:p-6"
+          >
+            <div class="bg-orange-50 flex justify-between items-center">
+              <div class="flex flex-col bg-red-100">
+                <Span
+                  class="text-[18px] md:text-[27px] font-semibold pb-3"
+                  style="line-height: 1.2em"
+                  >Sekolah Vokasi UNS Surakarta
+                </Span>
+                <Span
+                  class="flex flex-row items-center text-[14px] md:text-[18px] gap-1"
+                >
+                  <img
+                    src="../../assets/calender.png "
+                    class="w-[2.3333vmax] h-[2.3333vmax] md:w-[28px] md:h-[28px]"
+                    alt=""
+                  />
+                  231313123</Span
+                >
+                <Span
+                  class="flex flex-row items-center text-[14px] md:text-[18px] gap-1"
+                >
+                  <img
+                    src="../../assets/time-line.png "
+                    class="w-[2.3333vmax] h-[2.3333vmax] md:w-[28px] md:h-[28px]"
+                    alt=""
+                  />
+                  231313123</Span
+                >
+              </div>
               <div>
-                <div class="flex flex-row gap-2 items-center">
-                  <img
-                    src="../../assets/calender.png"
-                    class="h-5 xl:h-7"
-                    alt=""
-                  />
-                  <span class="text-[13px] xl:text-[18px]">32-2-2003</span>
-                </div>
-                <div class="flex flex-row gap-2 items-center">
-                  <img
-                    src="../../assets/time-line.png"
-                    class="h-5 xl:h-7"
-                    alt=""
-                  />
-                  <span class="text-[13px] xl:text-[18px]">32-2-2003</span>
-                </div>
+                <button
+                  class="w-[15.5vmin] md:w-[15.5vmin] bg-[#EEFFEE] text-[11px] md:text-[14px] text-[#008000] rounded-lg"
+                >
+                  Diterima
+                </button>
               </div>
             </div>
-            <div
-              class="w-[76px] h-[20px] rounded-[12px] text-[13px] text-[#008000] bg-[#EEFFEE] flex items-center justify-center"
-            >
-              Diterima
+            <!-- rectangle -->
+            <div class="h-[2px] bg-[#D9D9D9]"></div>
+            <!-- tombol ambil -->
+            <div class="h-[5vmin] flex flex-row justify-between items-center">
+              <span
+                class="text-[11px] md:text-[12px]"
+                style="line-height: 1.2em"
+                >Pinjaman ruangan disetujui</span
+              >
             </div>
-          </div>
-          <div
-            class="m-5 text-[12px] flex flex-1 items-center justify-between lg:h-[40px]"
-          >
-            <span class="lg:text-[13px]"
-              >Pinjaman diterima, ayo ambil mobil</span
-            >
           </div>
         </div>
       </div>
+      <!-- akhir card ruangan -->
+      <!-- akhir informasi -->
     </div>
-  </div>
-
-  <!-- Pinjam Mobil Pinjam Ruangan -->
-  <div
-    class="w-[100%] mx-auto border border-black-200 mt-20 rounded-[22px] p-5 flex flex-col items-center lg:w-[82%]"
-  >
+    <!-- fitur -->
     <div
-      class="flex flex-wrap justify-around gap-5 md:gap-[75px] md:place-items-stretch"
+      class="grid grid-cols-2 md:grid-cols-4 gap-10 bg-red-200 border border-[#404040] rounded-[18px] p-10"
     >
-      <Button
-        class="h-[103px] w-[103px] xl:h-[233px] xl:w-[233px] bg-[#C1E9FF] flex flex-col justify-center items-center gap-2 rounded-[17px] hover:bg-blue-300"
+      <!-- pinjam mobil -->
+      <button
+        class="w-[25vw] md:w-[15vw] bg-[#C1E9FF] p-3 md:py-12 md:px-6 rounded-lg flex flex-col gap-3 items-center hover:bg-blue-300"
+        @click="$router.push('/users/pengajuanmobil')"
       >
-        <img
-          src="../../assets/+.png"
-          class="h-[36px] w-[36px] md:h-[46px] md:w-[46px] xl:h-[76px] xl:w-[76px]"
-          alt=""
-        />
-        <span class="text-[10px] lg:text-[12px] xl:text-[23px]"
-          >Pinjam Mobil
-        </span></Button
+        <div
+          class="w-[12vw] h-[12vw] md:w-[5vw] md:h-[5vw] bg-[#0C6898] rounded-full flex justify-center items-center"
+        >
+          <img src="../../assets/plus.svg" alt="" />
+        </div>
+        <div class="w-[20vw] md:w-[10vw] h-[4vh] bg-slate-300">
+          <p for="" class="text-[12px] md:text-[20px] leading-tight">
+            Pinjam Mobil
+          </p>
+        </div>
+      </button>
+      <!-- rwiayat pinjam mobil -->
+      <button
+        class="w-[25vw] md:w-[15vw] bg-[#C1E9FF] p-3 md:py-12 md:px-6 rounded-lg flex flex-col gap-3 items-center hover:bg-blue-300"
+        @click="$router.push('/users/riwayatpinjammobil')"
       >
-      <Button
-        class="h-[103px] w-[103px] xl:h-[233px] xl:w-[233px] bg-[#C1E9FF] flex flex-col justify-center items-center gap-2 rounded-[17px] hover:bg-blue-300"
+        <div
+          class="w-[12vw] h-[12vw] md:w-[5vw] md:h-[5vw] bg-[#0C6898] rounded-full flex justify-center items-center"
+        >
+          <img src="../../assets/car-side.svg" alt="" />
+        </div>
+        <div class="w-[20vw] h-[4vh] md:w-[10vw] bg-slate-300">
+          <p for="" class="text-[12px] md:text-[20px] leading-tight">
+            Riwayat Pinjam Mobil
+          </p>
+        </div>
+      </button>
+      <!-- pinjam ruangan -->
+      <button
+        class="w-[25vw] md:w-[15vw] bg-[#FDEDCA] p-3 md:py-12 md:px-6 rounded-lg flex flex-col gap-3 items-center hover:bg-orange-300"
       >
-        <img
-          src="../../assets/riwayatpinjammobil.png"
-          class="h-[36px] w-[36px] md:h-[46px] md:w-[46px] xl:h-[76px] xl:w-[76px]"
-          alt=""
-        />
-        <span class="text-[10px] lg:text-[12px] xl:text-[23px]"
-          >Riwayat Pinjam Mobil
-        </span></Button
+        <div
+          class="w-[12vw] h-[12vw] md:w-[5vw] md:h-[5vw] bg-[#E26B00] rounded-full flex justify-center items-center"
+        >
+          <img src="../../assets/plus.svg" alt="" />
+        </div>
+        <div class="w-[20vw] md:w-[10vw] h-[4vh] bg-slate-300">
+          <p for="" class="text-[12px] md:text-[20px] leading-tight">
+            Pinjam Ruangan
+          </p>
+        </div>
+      </button>
+      <!-- Riwayat pinjam ruangan -->
+      <button
+        class="w-[25vw] md:w-[15vw] bg-[#FDEDCA] p-3 md:py-12 md:px-6 rounded-lg flex flex-col gap-3 items-center hover:bg-orange-300"
       >
-      <Button
-        class="h-[103px] w-[103px] xl:h-[233px] xl:w-[233px] bg-[#FDEDCA] flex flex-col justify-center items-center gap-2 rounded-[17px] hover:bg-orange-300"
-      >
-        <img
-          src="../../assets/+lagi.png"
-          class="h-[36px] w-[36px] md:h-[46px] md:w-[46px] xl:h-[76px] xl:w-[76px]"
-          alt=""
-        />
-        <span class="text-[10px] lg:text-[12px] xl:text-[23px]"
-          >Pinjam Ruang
-        </span></Button
-      >
-      <Button
-        class="h-[103px] w-[103px] xl:h-[233px] xl:w-[233px] bg-[#FDEDCA] flex flex-col justify-center items-center gap-2 rounded-[17px] hover:bg-orange-300"
-      >
-        <img
-          src="../../assets/pinjamruang.png"
-          class="h-[36px] w-[36px] md:h-[46px] md:w-[46px] xl:h-[76px] xl:w-[76px]"
-          alt=""
-        />
-        <span class="text-[10px] lg:text-[12px] xl:text-[23px]"
-          >Riwayat Pinjam Ruangan
-        </span></Button
-      >
+        <div
+          class="w-[12vw] h-[12vw] md:w-[5vw] md:h-[5vw] bg-[#E26B00] rounded-full flex justify-center items-center"
+        >
+          <img src="../../assets/Group.svg" alt="" />
+        </div>
+        <div class="w-[20vw] h-[4vh] md:w-[10vw] bg-slate-300">
+          <p for="" class="text-[12px] md:text-[20px] leading-tight">
+            Riwayat Pinjam Mobil
+          </p>
+        </div>
+      </button>
     </div>
   </div>
 </template>
 <script></script>
-
-<style>
-center {
-  margin: 0 auto;
-}
-</style>
