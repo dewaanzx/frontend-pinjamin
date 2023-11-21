@@ -1,5 +1,7 @@
 <template>
-  <nav class="py-5 px-5 h-[80px] bg-[#2B9FDC] xl:w-[100%]">
+  <nav
+    class="py-5 px-5 lg:px-[140px] lg:py-[10px] h-[80px] bg-[#2B9FDC] xl:w-[100%]"
+  >
     <div class="flex justify-between items-center">
       <img src="../assets/logo.svg " class="h-[50px]" alt="" />
       <!-- toggle responsive -->
@@ -15,7 +17,7 @@
           <li class="flex justify-center items-center">
             <button
               href=""
-              class="flex justify-center flex-col items-center text-base gap-1 w-11 h-11 bg-sky-600 hover:bg-sky-700 rounded-full"
+              class="flex justify-center flex-col items-center text-base gap-1 w-11 h-11 bg-[#2B9FDC] hover:bg-sky-600 rounded-full"
             >
               <img
                 src="../assets/bell.svg"
@@ -24,9 +26,7 @@
               />
             </button>
           </li>
-          <li
-            class="flex justify-center items-center lg:mr-[30px] xl:mr-[60px]"
-          >
+          <li class="flex justify-center items-center">
             <div class="flex justify-center items-center gap-3">
               <img
                 src="../assets/profile.png"
@@ -36,7 +36,7 @@
               <span class="text-white">Irfannudin</span>
             </div>
           </li>
-          <li class="flex justify-center items-center">
+          <!-- <li class="flex justify-center items-center">
             <Button
               @click="authStore.logout()"
               class="flex justify-center items-center text-[12px] text-white font-semibold w-[40px] h-[28px] rounded-lg bg-red-500 hover:bg-red-700"
@@ -47,7 +47,7 @@
                 alt=""
               />
             </Button>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
