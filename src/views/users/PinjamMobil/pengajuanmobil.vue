@@ -23,16 +23,24 @@
           <div class="grid gap-2 md:w-[80%]">
             <div class="flex flex-col text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Tujuan</label>
-              <p class="">Bali</p>
+              <input
+                class="rounded-lg w-[100%] h-[3vmax] px-3 border border-[#D9D9D9]"
+                type="text"
+                required
+                v-model="formData.destination"
+                placeholder="Masukkan Tujuan Anda"
+              />
             </div>
             <div class="flex flex-col text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Deskripsi</label>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et,
-                soluta tempore? Esse deserunt adipisci suscipit quas odio sed
-                tempora aut architecto ipsum enim corporis sequi minus, omnis
-                ea! Nostrum, laboriosam.
-              </p>
+              <textarea
+                class="rounded-lg w-[100%] h-[7vmax] p-3 border border-[#D9D9D9]"
+                required
+                v-model="formData.description"
+                cols="30"
+                rows="10"
+                placeholder="Deskripsi tujuan anda"
+              ></textarea>
             </div>
           </div>
         </div>
@@ -46,11 +54,21 @@
           <div class="grid grid-cols-2 gap-2">
             <div class="flex flex-col text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Tanggal</label>
-              <p class="">Bali</p>
+              <input
+                class="rounded-lg w-[100%] h-[3vmax] px-3 border border-[#D9D9D9]"
+                type="date"
+                required
+                v-model="formData.date"
+              />
             </div>
             <div class="flex flex-col text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Jam</label>
-              <p class="">Bali</p>
+              <input
+                class="rounded-lg w-[100%] h-[3vmax] px-3 border border-[#D9D9D9]"
+                type="time"
+                required
+                v-model="formData.time"
+              />
             </div>
           </div>
         </div>
@@ -65,21 +83,35 @@
             <div class="grid grid-cols-2 gap-2">
               <div class="flex flex-col text-[12px] gap-1">
                 <label for="" class="md:text-[16px]">Penumpang</label>
-                <p class="">Bali</p>
+                <input
+                  v-model="formData.passanger"
+                  class="rounded-lg w-full md:w-[30%] h-[3vmax] px-3 border border-[#D9D9D9]"
+                  type="number"
+                  required
+                />
               </div>
               <div class="flex flex-col text-[12px] gap-1">
                 <label for="" class="md:text-[16px]">Sopir</label>
-                <p class="">Bali</p>
+                <select
+                  required
+                  v-model="formData.driver"
+                  class="rounded-lg w-full md:w-[30%] h-[3vmax] px-3 border border-[#D9D9D9]"
+                >
+                  <option value="1">Pakai</option>
+                  <option value="0">Tidak Pakai</option>
+                </select>
               </div>
             </div>
             <div class="text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Deskripsi</label>
-              <p class="">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero
-                voluptatum maiores iste modi saepe. Ex, nobis, ipsa placeat iste
-                eligendi neque eveniet fugiat necessitatibus quaerat corporis
-                voluptatibus natus ipsam deleniti?
-              </p>
+              <textarea
+                class="rounded-lg w-[100%] h-[7vmax] p-3 border border-[#D9D9D9]"
+                required
+                v-model="formData.passanger_description"
+                cols="30"
+                rows="10"
+                placeholder="Masukan catatan anda terkait penumpang dan sopir"
+              ></textarea>
             </div>
           </div>
         </div>
@@ -98,14 +130,14 @@
         <button
           class="bg-[#E26B00] hover:bg-orange-600 w-[25%] rounded-md text-white md:w-[10%]"
         >
-          kirim
+          Selanjutnya
         </button>
       </div>
     </form>
   </div>
 </template>
 <script>
-import { useCarTransactionStore } from "../../stores/car_transaction.store";
+import { useCarTransactionStore } from "../../../stores/car_transaction.store";
 
 export default {
   data() {

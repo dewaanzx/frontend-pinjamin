@@ -23,24 +23,15 @@
           <div class="grid gap-2 md:w-[80%]">
             <div class="flex flex-col text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Tujuan</label>
-              <input
-                class="rounded-lg w-[100%] h-[3vmax] px-3 border border-[#D9D9D9]"
-                type="text"
-                required
-                v-model="formData.destination"
-                placeholder="Masukkan Tujuan Anda"
-              />
+              <p class="">
+                {{ carTransactionStore.car_transactions.destination }}
+              </p>
             </div>
             <div class="flex flex-col text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Deskripsi</label>
-              <textarea
-                class="rounded-lg w-[100%] h-[7vmax] p-3 border border-[#D9D9D9]"
-                required
-                v-model="formData.description"
-                cols="30"
-                rows="10"
-                placeholder="Deskripsi tujuan anda"
-              ></textarea>
+              <p>
+                {{ carTransactionStore.car_transactions.description }}
+              </p>
             </div>
           </div>
         </div>
@@ -54,21 +45,15 @@
           <div class="grid grid-cols-2 gap-2">
             <div class="flex flex-col text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Tanggal</label>
-              <input
-                class="rounded-lg w-[100%] h-[3vmax] px-3 border border-[#D9D9D9]"
-                type="date"
-                required
-                v-model="formData.date"
-              />
+              <p class="">
+                {{ carTransactionStore.car_transactions.date_start }}
+              </p>
             </div>
             <div class="flex flex-col text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Jam</label>
-              <input
-                class="rounded-lg w-[100%] h-[3vmax] px-3 border border-[#D9D9D9]"
-                type="time"
-                required
-                v-model="formData.time"
-              />
+              <p class="">
+                {{ carTransactionStore.car_transactions.time_start }}
+              </p>
             </div>
           </div>
         </div>
@@ -83,35 +68,31 @@
             <div class="grid grid-cols-2 gap-2">
               <div class="flex flex-col text-[12px] gap-1">
                 <label for="" class="md:text-[16px]">Penumpang</label>
-                <input
-                  v-model="formData.passanger"
-                  class="rounded-lg w-full md:w-[30%] h-[3vmax] px-3 border border-[#D9D9D9]"
-                  type="number"
-                  required
-                />
+                <p class="">
+                  {{ carTransactionStore.car_transactions.passanger }}
+                </p>
               </div>
               <div class="flex flex-col text-[12px] gap-1">
                 <label for="" class="md:text-[16px]">Sopir</label>
-                <select
-                  required
-                  v-model="formData.driver"
-                  class="rounded-lg w-full md:w-[30%] h-[3vmax] px-3 border border-[#D9D9D9]"
+                <p
+                  class=""
+                  v-if="carTransactionStore.car_transactions.driver == 1"
                 >
-                  <option value="1">Pakai</option>
-                  <option value="0">Tidak Pakai</option>
-                </select>
+                  Ya
+                </p>
+                <p
+                  class=""
+                  v-if="carTransactionStore.car_transactions.driver == 0"
+                >
+                  Tidak
+                </p>
               </div>
             </div>
             <div class="text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Deskripsi</label>
-              <textarea
-                class="rounded-lg w-[100%] h-[7vmax] p-3 border border-[#D9D9D9]"
-                required
-                v-model="formData.passanger_description"
-                cols="30"
-                rows="10"
-                placeholder="Masukan catatan anda terkait penumpang dan sopir"
-              ></textarea>
+              <p class="">
+                {{ carTransactionStore.car_transactions.passanger_description }}
+              </p>
             </div>
           </div>
         </div>
@@ -130,14 +111,14 @@
         <button
           class="bg-[#E26B00] hover:bg-orange-600 w-[25%] rounded-md text-white md:w-[10%]"
         >
-          Selanjutnya
+          kirim
         </button>
       </div>
     </form>
   </div>
 </template>
 <script>
-import { useCarTransactionStore } from "../../stores/car_transaction.store";
+import { useCarTransactionStore } from "../../../stores/car_transaction.store";
 
 export default {
   data() {
@@ -162,6 +143,10 @@ export default {
         this.$router.push("/users");
       }
     },
+  },
+  mounted() {
+    const id = this.$route.params.id;
+    this.carTransactionStore.show(id);
   },
 };
 </script>

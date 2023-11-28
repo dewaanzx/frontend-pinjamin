@@ -19,8 +19,17 @@ export const useCarTransactionStore = defineStore({
         this.car_transactions = car_transactions.data;
       }
     },
-    async show() {
+    async show(id) {
       let url = `${baseUrl}/car-transaction/${id}`;
+
+      const car_transactions = await axiosWrapper.get(url);
+
+      if (car_transactions) {
+        this.car_transactions = car_transactions.data;
+      }
+    },
+    async fetchByStatus(status) {
+      let url = `${baseUrl}/car-transaction/status/${status}`;
 
       const car_transactions = await axiosWrapper.get(url);
 

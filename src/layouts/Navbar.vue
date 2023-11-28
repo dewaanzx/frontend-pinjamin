@@ -2,8 +2,14 @@
   <nav
     class="py-5 px-5 lg:px-[140px] lg:py-[10px] h-[80px] bg-[#2B9FDC] xl:w-[100%]"
   >
-    <div class="flex justify-between items-center">
-      <img src="../assets/logo.svg " class="h-[50px]" alt="" />
+    <div
+      class="flex justify-between items-center"
+      v-for="user in userStore.users"
+    >
+      <RouterLink :to="'/users'"
+        ><img src="../assets/logo.svg " class="h-[50px]" alt=""
+      /></RouterLink>
+
       <!-- toggle responsive -->
       <button
         @click="toggleOpen"
@@ -18,6 +24,7 @@
             <button
               href=""
               class="flex justify-center flex-col items-center text-base gap-1 w-11 h-11 bg-[#2B9FDC] hover:bg-sky-600 rounded-full"
+              @click="$router.push('/users/notifikasi')"
             >
               <img
                 src="../assets/bell.svg"
@@ -29,11 +36,12 @@
           <li class="flex justify-center items-center">
             <div class="flex justify-center items-center gap-3">
               <img
-                src="../assets/profile.png"
+                :src="'http://localhost:8080/uploads/users/' + user.picture"
+                style="object-fit: cover"
                 class="h-[32px] w-[32px] rounded-full"
                 alt=""
               />
-              <span class="text-white">Irfannudin</span>
+              <span class="text-white">{{ user.name }}</span>
             </div>
           </li>
           <!-- <li class="flex justify-center items-center">
@@ -54,23 +62,26 @@
     <div
       v-show="open"
       class="fixed bottom-0 right-0 left-0 p-6 rounded-t-full bg-[#2B9FDC] animate-fade-up md:hidden block"
+      v-for="user in userStore.users"
     >
       <ul class="grid gap-4">
         <li class="flex justify-center items-center">
           <div class="flex justify-center flex-col items-center gap-1">
             <img
-              src="../assets/profile.png"
+              :src="'http://localhost:8080/uploads/users/' + user.picture"
+              style="object-fit: cover"
               class="h-[40px] w-[40px] rounded-full"
               alt=""
             />
-            <span class="text-[12px] font-semibold text-white"
-              >Irfannudin Hakim</span
-            >
+            <span class="text-[12px] font-semibold text-white">
+              {{ user.name }}
+            </span>
           </div>
         </li>
         <li class="flex justify-center items-center rounded-full">
           <button
             href=""
+            @click="$router.push('/users/notifikasi')"
             class="flex justify-center flex-col items-center text-base gap-1 w-11 h-11 bg-sky-600 hover:bg-sky-700 rounded-full"
           >
             <img
@@ -110,22 +121,27 @@
 <script>
 import { useAuthStore } from "@/stores/auth.store.js";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
+import { useUserStore } from "@/stores/user.store";
 
 export default {
   name: "Navbar",
   data() {
     const open = ref(false);
-
     const toggleOpen = () => {
       open.value = !open.value;
     };
-
     return {
+      userStore: useUserStore(),
       authStore: useAuthStore(),
       open,
       toggleOpen,
     };
   },
+  mounted() {
+    this.userStore.detail();
+  },
+  components: { RouterLink },
 };
 </script>
 
