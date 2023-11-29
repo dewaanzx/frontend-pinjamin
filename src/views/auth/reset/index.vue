@@ -18,43 +18,22 @@
 			  <img src="../../../assets/logobiru.png" alt="Logo" style="width: 100px; height: auto;" />
 			</div>
 			<div>
-			  <b class="text-lg text-gray-800">Login</b>
+			  <b class="text-lg text-gray-800">Reset Password</b>
 			</div>
-			  <form action="" @submit.prevent="login">
+			  <form action="" @submit.prevent="forgot">
 			  <div class="flex flex-col">
 				<label for="email" class="font-medium text-[12px] mb-2">
-				  <i class="fa fa-user-circle-o"></i> Email
+				  <i class="fa fa-user-circle-o"></i> Masukkan emailmu untuk bantu reset
 				</label>
 				<input v-model="formData.email" type="email" id="email" placeholder="Masukkan email anda"
 				  class="p-3 rounded-lg border border-gray-300 w-full" />
 			  </div>
 			  <br>
-			  <div class="flex flex-col">
-				<label for="password" class="font-medium text-[12px] mb-2">
-				  <i class="fa fa-key"></i> Password
-				</label>
-				<input v-model="formData.password" type="password" id="password" placeholder="Masukkan password anda"
-				  class="p-3 rounded-lg border border-gray-300 w-full" />
-			  </div>
-			  <div class="text-left">
-			  <a @click="$router.push('/reset')" class="text-[12px] font-bold text-blue-500 hover:text-blue-700">
-				<button>Lupa Password?</button>
-			  </a>
-			</div>
-			  <br>
 			  <button :type="'submit'"
 				class="transition p-3 w-full bg-orange-500 hover:bg-blue-600 text-white rounded-lg mb-4">
-				Masuk <i class="fa fa-send"></i>
+				Kirim <i class="fa fa-send"></i>
 			  </button>
 			</form>	  
-			<hr style="border: 1px solid #ccc; margin: 10px 0;">
-			<div class="text-center mb-3">
-			  <span class="text-[12px] text-gray-600">Belum punya akun?
-				<button @click="$router.push('/register')" class="text-[12px] text-blue-500 hover:text-blue-700 font-bold">
-				  Daftar
-				</button>
-			  </span>
-			</div>
 			</div>
 		  </div>
 		</div>
@@ -81,8 +60,8 @@ export default {
 		}
 	},
 	methods: {
-		login() {
-			this.authStore.login(this.formData)
+		forgot() {
+			this.authStore.forgot(this.formData)
 		}
 	}
 }
