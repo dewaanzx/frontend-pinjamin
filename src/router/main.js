@@ -148,5 +148,5 @@ export default [
       layout: NavbarPinjamin,
       middleware: [AuthMiddleware],
     },
-  },
+  }
 ];
