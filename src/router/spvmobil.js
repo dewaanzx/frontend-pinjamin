@@ -1,4 +1,5 @@
 import SpvMobilPinjamin from "../views/spv-mobil/index.vue";
+import SpvMobilKonfirmasiMobil from "../views/spv-mobil/KonfirmasiMobil/konfirmasi-mobil.vue";
 
 
 //Layout
@@ -12,6 +13,16 @@ export default [
 	component: SpvMobilPinjamin,
 	meta: {
 	  title: "SpvMobilPinjamin",
+	  layout: NavbarPinjamin,
+	  middleware: [AuthMiddleware],
+	},
+  },
+  {
+	path: "/spv-mobil/konfirmasi-mobil",
+	name: "konfirmasi-mobil",
+	component: SpvMobilKonfirmasiMobil,
+	meta: {
+	  title: "SpvMobilKonfirmasiMobil",
 	  layout: NavbarPinjamin,
 	  middleware: [AuthMiddleware],
 	},
