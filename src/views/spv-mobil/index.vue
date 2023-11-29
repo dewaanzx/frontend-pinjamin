@@ -11,8 +11,8 @@
 					<swiper :slidesPerView="1" :spaceBetween="30" :keyboard="{
 						enabled: true,
 					}" :pagination="{
-	clickable: true,
-}" :navigation="true" :modules="modules" class="mySwiper">
+						clickable: true,
+					}" :navigation="true" :modules="modules" class="mySwiper">
 						<swiper-slide>
 							<div class="border border-[#666666] gap-4 flex flex-col rounded-[18px] p-3 md:p-6">
 								<div class="bg-orange-50 flex justify-between items-center">
@@ -134,7 +134,7 @@
 			<!-- konfirmasi mobil -->
 			<button
 				class="w-full md:w-[15vw] bg-[#C1E9FF] p-9 md:py-12 md:px-6 rounded-lg flex flex-col gap-3 items-center hover:bg-blue-300"
-				@click="$router.push('/users/pengajuanmobil')">
+				@click="$router.push('/spv-mobil/konfirmasi-mobil')">
 				<div
 					class="w-[12vw] h-[12vw] md:w-[5vw] md:h-[5vw] bg-[#0C6898] rounded-full flex justify-center items-center">
 					<img src="../../assets/plus.svg" alt="" />
@@ -159,7 +159,7 @@
 					</p>
 				</div>
 			</button>
-			<!-- pinjam ruangan -->
+			<!-- cek mobil -->
 			<button
 				class="w-full md:w-[15vw] bg-[#C1E9FF] p-9 md:py-12 md:px-6 rounded-lg flex flex-col gap-3 items-center hover:bg-blue-300">
 				<div
@@ -168,48 +168,86 @@
 				</div>
 				<div class="w-[20vw] md:w-[10vw] h-[4vh]">
 					<p for="" class="text-[12px] md:text-[20px] leading-tight">
-						Pinjam Ruangan
+						Cek Mobil
 					</p>
 				</div>
 			</button>
 		</div>
 
 		<!-- Harian Mingguan Bulanan -->
-		<div
-			class="grid grid-cols-2 md:grid-cols-1 gap-10 bg-red-200 border border-[#404040] rounded-[18px] p-10 justify-center">
-			<swiper :pagination="pagination" :modules="modules" class="mySwiper">
-				<swiper-slide>Slide 1
-					<div
-						class="w-[25vw] md:w-[15vw] bg-[#FDEDCA] p-3 md:py-12 md:px-6 rounded-lg flex flex-col gap-3 items-center hover:bg-orange-300">
-						<div class="w-[20vw] md:w-[10vw] h-[4vh] bg-slate-300">
-							<p for="" class="text-[12px] md:text-[20px] leading-tight">
-								Pinjam Ruangan
-							</p>
+		<div class="border border-[#666666] gap-4 flex flex-col rounded-[18px] p-3 md:p-6">
+			<div class="flex flex-wrap gap-3 justify-center md:justify-center">
+				<RouterLink :to="'/users/riwayat-pinjam-mobil/Semua'">
+					<button
+						class="px-2 py-1 text-[11px] md:text-[14px] md:px-6 md:py-2 border border-[#e5e5e5] rounded-lg md:rounded-[16px]"
+						@click="fetchByStatus('Semua')" :class="$route.params.status == 'Semua'
+							? 'text-[#ffffff] bg-[#2B9FDC]'
+							: ''
+							">
+						Harian
+					</button>
+				</RouterLink>
+				<RouterLink :to="'/users/riwayat-pinjam-mobil/Dicek'">
+					<button
+						class="px-2 py-1 text-[11px] md:text-[14px] md:px-6 md:py-2 border border-[#e5e5e5] rounded-lg md:rounded-[16px]"
+						@click="fetchByStatus('Dicek')" :class="$route.params.status == 'Dicek'
+							? 'text-[#ffffff] bg-[#2B9FDC]'
+							: ''
+							">
+						Mingguan
+					</button>
+				</RouterLink>
+				<RouterLink :to="'/users/riwayat-pinjam-mobil/Ditolak'">
+					<button
+						class="px-2 py-1 text-[11px] md:text-[14px] md:px-6 md:py-2 border border-[#e5e5e5] rounded-lg md:rounded-[16px]"
+						@click="fetchByStatus('Ditolak')" :class="$route.params.status == 'Ditolak'
+							? 'text-[#ffffff] bg-[#2B9FDC]'
+							: ''
+							">
+						Bulanan
+					</button>
+				</RouterLink>
+			</div>
+			<div class="flex flex-wrap gap-3 justify-center md:justify-center">
+				<h1 class="text-center">
+					1 November 2023 - 1 November 2023
+				</h1>
+			</div>
+			<!-- Gap -->
+			<div class="h-4"></div>
+
+			<div class="flex flex-wrap gap-6 justify-center md:justify-center">
+				<div
+					class="w-full md:w-[40vw] bg-[#C1E9FF] p-9 md:py-9 md:px-4 rounded-lg flex flex-col gap-3 items-center hover:bg-blue-300">
+					<!-- Teks di tengah -->
+					<div class="text-center">
+						<p class="text-xl font-medium">Mobil</p>
+					</div>
+
+					<!-- Teks angka di bawahnya -->
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+						<!-- Kolom kiri -->
+						<div
+							class="text-center bg-[#C1E9FF] p-5 rounded-lg hover:bg-blue-300 border-r md:border-r-0 md:border-b">
+							<p class="text-xl font-normal">10</p>
+							<p class="text-sm">Pinjaman</p>
+						</div>
+
+						<!-- Kolom tengah -->
+						<div
+							class="text-center bg-[#C1E9FF] p-5 rounded-lg hover:bg-blue-300 border-r md:border-r-0 md:border-b">
+							<p class="text-xl font-normal">8</p>
+							<p class="text-sm">Diterima</p>
+						</div>
+
+						<!-- Kolom kanan -->
+						<div class="text-center bg-[#C1E9FF] p-5 rounded-lg hover:bg-blue-300 md:border-b">
+							<p class="text-xl font-normal">2</p>
+							<p class="text-sm">Ditolak</p>
 						</div>
 					</div>
-				</swiper-slide>
-				<swiper-slide>
-					<div> Slide
-					</div>
-					<div
-						class="w-[25vw] md:w-[15vw] bg-[#FDEDCA] p-3 md:py-12 md:px-6 rounded-lg flex flex-col gap-3 items-center hover:bg-orange-300">
-						<div class="w-[20vw] md:w-[10vw] h-[4vh] bg-slate-300">
-							<p for="" class="text-[12px] md:text-[20px] leading-tight">
-								Pinjam Ruangan
-							</p>
-						</div>
-					</div>
-				</swiper-slide><swiper-slide>Slide 3
-					<div
-						class="w-[25vw] md:w-[15vw] bg-[#FDEDCA] p-3 md:py-12 md:px-6 rounded-lg flex flex-col gap-3 items-center hover:bg-orange-300">
-						<div class="w-[20vw] md:w-[10vw] h-[4vh] bg-slate-300">
-							<p for="" class="text-[12px] md:text-[20px] leading-tight">
-								Pinjam Ruangan
-							</p>
-						</div>
-					</div>
-				</swiper-slide>
-			</swiper>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -297,3 +335,4 @@ export default {
 	},
 };
 </script>
+
