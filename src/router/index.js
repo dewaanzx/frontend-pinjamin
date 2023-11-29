@@ -3,8 +3,10 @@ import middlewarePipeline from '@/middleware/middlewarePipeline.js';
 
 import main from './main';
 import auth from './auth';
+import admin from './admin';
+import spvmobil from './spvmobil';
 
-const arr_routes = [main, auth];
+const arr_routes = [main, auth, admin, spvmobil];
 
 const routes = arr_routes.flat(1);
 
