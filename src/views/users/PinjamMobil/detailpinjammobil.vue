@@ -9,7 +9,7 @@
     <!-- bagian form request -->
     <form
       action=""
-      class="p-3 md:p-9 rounded-lg border border-[#D9D9D9] flex flex-col gap-5"
+      class="p-3 md:p-9 rounded-lg md:rounded-[36px] border border-[#D9D9D9] flex flex-col gap-5"
     >
       <!-- form pinjaman -->
       <div class="">
@@ -131,7 +131,7 @@
     </form>
     <!-- box alert -->
     <div
-      class="rounded-lg border border-[#D9D9D9] p-4 text-[11px] md:text-[16px] flex justify-center"
+      class="rounded-lg md:rounded-[36px] border border-[#D9D9D9] p-4 md:p-12 text-[11px] md:text-[16px] flex justify-center"
     >
       <p>
         Data mobil akan muncul jika permintaan peminjaman
@@ -141,19 +141,17 @@
 
     <!-- box mobil -->
     <div
-      class="rounded-lg border border-[#D9D9D9] p-4 md:p-9 flex flex-col md:flex-row gap-3 md:gap-6"
+      class="rounded-lg md:rounded-[36px] border border-[#D9D9D9] p-4 md:p-9 flex flex-col md:flex-row gap-3 md:gap-2"
     >
-      <div
-        class="bg-red-200 w-[50%] md:w-[25%] h-[12vmax] rounded-sm m-auto md:m-0"
-      >
+      <div class="w-[50%] md:w-[20%] h-[12vmax] rounded-sm m-auto md:m-0">
         <img
           src="../../../assets/car.png"
-          class="h-[12vmax] rounded-md"
+          class="w-full h-[14vmax] md:h-[10vmax] md:w-[13vmax] rounded-md md:rounded-[20px]"
           style="object-fit: cover"
           alt=""
         />
       </div>
-      <div class="flex flex-col gap-2 bg-red-100 md:w-full md:gap-2">
+      <div class="flex flex-col gap-2 md:w-[80%] md:gap-2">
         <!-- Merk dan tipe mobil -->
         <div class="flex flex-col gap-2">
           <p
@@ -189,6 +187,50 @@
           <p class="text-[12px] md:text-[14px] text-center md:text-left">
             AB 1111 XX
           </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- box bukti ambil mobil -->
+    <div
+      class="rounded-lg md:rounded-[36px] border border-[#D9D9D9] p-4 md:p-9 flex flex-col md:flex-row md:justify-around gap-3 md:gap-2 text-[12px] md:text-[16px]"
+    >
+      <span class="text-[14px] md:text-[16px] md:w-[20%] text-[#2B9FDC]"
+        >Bukti ambil mobil</span
+      >
+      <div class="flex flex-col gap-3 md:gap-9 md:w-[80%]">
+        <div>
+          <!-- jam -->
+          <span>Jam</span>
+          <p class="md:text-[14px]">10.10</p>
+        </div>
+        <div>
+          <!-- Upload foto -->
+          <span>Foto diri</span>
+          <label class="flex flex-col rounded-lg">
+            <div class="">
+              <img
+                src="../../../assets/car.png"
+                alt=""
+                style="object-fit: cover"
+                class="rounded-lg h-[20vmax] w-full"
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <!-- Foto SIM -->
+          <span>Foto SIM</span>
+          <label class="flex flex-col rounded-lg">
+            <div class="">
+              <img
+                src="../../../assets/profile.png"
+                alt=""
+                style="object-fit: cover"
+                class="rounded-lg h-[20vmax] w-full"
+              />
+            </div>
+          </label>
         </div>
       </div>
     </div>
