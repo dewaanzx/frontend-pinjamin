@@ -61,6 +61,7 @@
               >
               <button
                 class="w-[20vw] md:w-[8vw] md:h-[5vh] bg-orange-400 hover:bg-orange-500 text-[11px] md:text-[14px] text-white rounded-md"
+                @click="$router.push('/users/ambil-mobil')"
               >
                 Ambil Mobil
               </button>
