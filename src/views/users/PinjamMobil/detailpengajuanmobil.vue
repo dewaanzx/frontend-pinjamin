@@ -11,10 +11,9 @@
       bagian step section
     </div>
     <!-- bagian form request -->
-    <form
+    <div
       action=""
-      @submit.prevent="create"
-      class="p-3 md:p-9 rounded-lg border border-[#D9D9D9] flex flex-col gap-5"
+      class="p-3 md:p-9 rounded-lg md:rounded-[36px] border border-[#D9D9D9] flex flex-col gap-5"
     >
       <!-- form pinjaman -->
       <div class="">
@@ -42,7 +41,7 @@
           <span class="text-[14px] md:text-[16px] md:w-[20%]"
             >Tanggal & Jam</span
           >
-          <div class="grid grid-cols-2 gap-2">
+          <div class="grid grid-cols-2 gap-2 w-[100%] md:w-[80%]">
             <div class="flex flex-col text-[12px] gap-1">
               <label for="" class="md:text-[16px]">Tanggal</label>
               <p class="">
@@ -104,17 +103,17 @@
         class="h-[3vmax] text-[12px] md:text-[16px] flex justify-end items-center gap-5"
       >
         <button
-          class="bg-red-300 hover:bg-red-400 w-[25%] rounded-md text-white md:w-[10%]"
+          class="hover:bg-gray-100 w-[25%] md:py-[10px] md:px-9 md:rounded-[16px] rounded-md md:w-[10%]"
         >
           Batal
         </button>
         <button
-          class="bg-[#E26B00] hover:bg-orange-600 w-[25%] rounded-md text-white md:w-[10%]"
+          class="bg-[#E26B00] hover:bg-orange-600 w-[25%] md:py-[10px] md:px-9 md:rounded-[16px] rounded-md text-white md:w-[10%]"
         >
           kirim
         </button>
       </div>
-    </form>
+    </div>
   </div>
 </template>
 <script>

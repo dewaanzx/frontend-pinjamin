@@ -11,6 +11,7 @@ import UsersProfile from "../views/users/Profile/profile.vue";
 import UsersEditProfile from "../views/users/Profile/EditProfile.vue";
 import UsersGantiPassword from "../views/users/Profile/GantiPassword.vue";
 import UsersNotifikasi from "../views/users/notifikasi.vue";
+import UsersAmbilMobil from "../views/users/PinjamMobil/ambilmobil.vue";
 
 import ExampleLayout from "@/layouts/ExampleLayout.vue";
 import NavbarPinjamin from "../layouts/Navbar.vue";
@@ -145,6 +146,16 @@ export default [
     component: UsersNotifikasi,
     meta: {
       title: "Notifikasi",
+      layout: NavbarPinjamin,
+      middleware: [AuthMiddleware],
+    },
+  },
+  {
+    path: "/users/ambil-mobil",
+    name: "users.ambil.mobil",
+    component: UsersAmbilMobil,
+    meta: {
+      title: "Ambil Mobil",
       layout: NavbarPinjamin,
       middleware: [AuthMiddleware],
     },
